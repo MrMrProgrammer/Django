@@ -4,8 +4,7 @@
 MEDIA_ROOT = BASE_DIR / 'uploads'
 
 
-import os
-
+# ===========================================================
 # forms.py
 
 
@@ -54,11 +53,14 @@ class form(View):
 
 # ===========================================================
 # index.html
+# Pay attention to the enctype value in the form !
+
 
 <form action="#" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <input type="file" name="image">
     <button type="submit">Submit</button>
 </form>
+
 
 # ===========================================================
