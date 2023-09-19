@@ -8,6 +8,7 @@ class FileUploader(models.Model):
     file_path = models.FileField(upload_to='uploads/')
     format = models.CharField(max_length=10)
 
+
 # ===========================================================
 # serializers.py
 
@@ -28,6 +29,7 @@ class FileSerializer(serializers.Serializer):
         validators=[validate_file_format],
     )
 
+
 # ===========================================================
 # urls.py
 
@@ -42,6 +44,7 @@ router.register(r'upload', views.FileUploadViewSet, basename='upload')
 urlpatterns = [
     path('', include(router.urls)),
 ]
+
 
 # ===========================================================
 # views.py
@@ -82,5 +85,5 @@ def handle_uploaded_file(f):
     file = FileUploader(file_path=file_path, format=format)
     file.save()
 
-# ===========================================================
 
+# ===========================================================
