@@ -50,3 +50,9 @@ send_email("Email Subject", 'Email recipient', {context}, "template_path")
 
 
 # ===========================================================
+# Description
+
+# First, you need to create a function that will handle the process of sending the email. (send_email)
+# In this function, you send the subject, recipient email, context, and template name.
+
+# The context value is combined with the html-css template and sent in the body of the email.
