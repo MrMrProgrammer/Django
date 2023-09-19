@@ -4,7 +4,8 @@
 MEDIA_ROOT = BASE_DIR / 'uploads'
 
 
-# ===========================================================
+import os
+
 # forms.py
 
 
