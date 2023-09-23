@@ -68,6 +68,7 @@ from rest_framework import serializers
 from .validators import FileValidator
 
 # In the line below, we enter the types of acceptable formats.
+# You can also set the maximum upload file size.
 validate_file = FileValidator(max_size=1024 * 100, content_types=('image/png', 'image/jpeg', 'video/mp4'))
 
 
