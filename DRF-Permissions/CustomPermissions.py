@@ -31,3 +31,12 @@ class IsAuthor(BasePermission):
 
 
 # ===========================================================
+# Tip : We can create a custom access level that only users who are members of a specific group can access
+
+
+class isDriver(BasePermission):
+    def has_permission(self, request, view):
+        return request.user.groups.filter(name='driver').exists()
+
+
+# ===========================================================
