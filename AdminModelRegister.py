@@ -3,7 +3,7 @@
 
 
 from django.contrib import admin
-from . import models
+from .DRF-Permissions import models
 
 class showDay(admin.ModelAdmin):
     list_display = ["__str__"]
