@@ -31,7 +31,6 @@ def function_name(request):
 # template.html
 
 
-
 <nav aria-label="Page navigation example">
     <ul class="pagination page-number">
 
