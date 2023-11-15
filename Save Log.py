@@ -60,8 +60,6 @@ def saveLog(request):
 
 
 from django.contrib import admin
-
-from django.contrib import admin
 from . import models
 
 class showLogs(admin.ModelAdmin):
