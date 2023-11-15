@@ -19,12 +19,10 @@ def getTime():
     time = shamsi_datetime.strftime("%H:%M")
     return time
 
-
 def getDate():
     current_datetime = datetime.now()
     date = current_datetime.strftime("%Y/%m/%d")
     return date
-
 
 def getIp(request):
 
@@ -36,16 +34,13 @@ def getIp(request):
 
     return ip
 
-
 def getAgent(request):
     agent = request.META.get('HTTP_USER_AGENT')
     return agent
 
-
 def getLanguage(request):
     language = request.META.get('HTTP_ACCEPT_LANGUAGE')
     return language
-
 
 def saveLog(request):
     try:
