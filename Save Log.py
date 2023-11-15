@@ -93,6 +93,7 @@ class Logger(models.Model):
 # On the target page
 # views.py
 
+
 from Log.loggers import saveLog
 
 # --------------
