@@ -7,3 +7,7 @@
 
 # 2)
 # https://www.geeksforgeeks.org/adding-wysiwyg-editor-to-django-project/
+
+# 3)
+# https://blog.devgenius.io/best-free-wysiwyg-editor-python-django-admin-panel-integration-d9cb30da1dba
+# list of some library
