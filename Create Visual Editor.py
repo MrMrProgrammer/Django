@@ -11,3 +11,7 @@
 # 3)
 # https://blog.devgenius.io/best-free-wysiwyg-editor-python-django-admin-panel-integration-d9cb30da1dba
 # list of some library
+
+# 4)
+# https://djangopackages.org/grids/g/wysiwyg/
+# list of all django visual editor
