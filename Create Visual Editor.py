@@ -15,3 +15,9 @@
 # 4)
 # https://djangopackages.org/grids/g/wysiwyg/
 # list of all django visual editor
+
+
+# -----------------------------------------------------------------
+
+# add custom font in CKeditor
+# https://stackoverflow.com/questions/33728372/django-add-custom-font-to-ckeditor
