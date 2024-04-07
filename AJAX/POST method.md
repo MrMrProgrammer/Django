@@ -16,7 +16,7 @@ class TestForm(forms.Form):
 
 ```python
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('POST', views.index, name='index'),
 ]
 ```
 
@@ -71,11 +71,16 @@ def index(request):
 
         $.ajax({
             type: "POST",
+
             url: "{% url 'index' %}",
+            // url: "/POST",
+
             data: formData,
+
             success: function (response) {
                 console.log(response);
             },
+            
             error: function (error) {
                 console.log(error);
             }
