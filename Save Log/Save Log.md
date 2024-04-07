@@ -1,8 +1,5 @@
 # User Visit Log
 
-[User Visit Log](#section-one)
-[Link to Section Two](#section-two)
-
 ### Terminal
 ```markdown
 python manage.py startapp Log
@@ -102,18 +99,41 @@ def saveLog(request, VPW=False):
         logObject.save()
 ```
 
+### Log/admin.py
 
-### Target Page
+```python
+from django.contrib import admin
+from . import models
+
+
+class showLogs(admin.ModelAdmin):
+    list_display = ["ip", "date", "time", "VPW", "count", "agent", "language", "client_name"]
+    ordering = ['-date', '-time']
+
+
+admin.site.register(models.Logger, showLogs)
+```
+
+
+
+### Target views.py (saveLog)
 Put the following code on the target page
 
 ```python
+from Log.loggers import saveLog
+
 # --------------
 saveLog(request)
 # --------------
 ```
 
-```python
+---
 
+# Saving information related to personal site viewing by the user
+
+### Log/loggers.py
+
+```python
 def SaveVPW(request):
 
     ip = getIp(request)
@@ -130,67 +150,11 @@ def SaveVPW(request):
 ```
 
 
-### Log/admin.py
+### Log/loggers.py
+When the user clicks on the personal site link, They are transferred to this function.
 
 ```python
-from django.contrib import admin
-from . import models
-
-class showLogs(admin.ModelAdmin):
-    list_display = ["ip", "date", "time", "agent", "language"]
-
-admin.site.register(models.Logger, showLogs)
-```
-
-
-### Log/models.py
-
-```python
-from django.db import models
-
-class Logger(models.Model):
-    date = models.CharField(max_length=20, verbose_name="تاریخ")
-    time = models.CharField(max_length=20, verbose_name="زمان")
-    ip = models.CharField(max_length=20, verbose_name="IP")
-    agent = models.CharField(max_length=500, verbose_name="مرورگر")
-    language = models.CharField(max_length=100, verbose_name="زبان")
-
-    def __str__(self):
-        return str(self.id)
-
-    class Meta:
-        verbose_name = "بازدید"
-        verbose_name_plural = "بازدید ها"
-```
-
-
-### views.py
-#### On the target page
-
-```python
-from Log.loggers import saveLog
-
-# --------------
-saveLog(request)
-# --------------
-```
-
-
----
-# Saving information related to personal site viewing by the user
-
 def SaveVPW(request):
     loggers.SaveVPW(request)
     return HttpResponseRedirect("https://mrmrprogrammer.pythonanywhere.com/")
-
-
-
-
-
-# Section One
-
-Text for section one goes here.
-
-# Section Two
-
-Text for section two goes here.
+```
