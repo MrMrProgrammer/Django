@@ -1,7 +1,7 @@
 # Sending data using the ```GET``` method in AJAX
 
 
-### index.html
+### template.html
 ```HTML
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 ```
