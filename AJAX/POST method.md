@@ -47,6 +47,10 @@ def index(request):
 ### template.html
 
 ```HTML
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+```
+
+```HTML
 <form id="testForm" action="" method="post">
     {% csrf_token %}
     {{ form.name.label }}<br/>
