@@ -18,9 +18,15 @@
 ```JS
 function sendData() {
 
-    var data = document.getElementById("data").innerText;
+    var text = document.getElementById("data").innerText;
+    var number = 12345;
 
-    $.get('/order/add-data?data=' + data).then(res => {
+    data = {
+        text: text,
+        new: number
+    }
+
+    $.get('/GET', data).then(res => {
         console.log('ok');
     });
 }
@@ -30,7 +36,7 @@ function sendData() {
 
 ```PYTHON
 def getData(request):
-    
+
     data = request.GET.get('data')
 
     return Response
