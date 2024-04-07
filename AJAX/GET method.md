@@ -7,17 +7,18 @@
 ```
 
 ```HTML
-<p id="data"></p>
-<button class="btn btn-success" onclick="addDate()" id="save-date-btn">ثبت تاریخ</button>
+<p id="data">This is TEST text !</p>
+
+<button type="button" onclick="sendData()">send data</button>
 ```
 
 ### script.js
 
 
 ```JS
-function addDate() {
+function sendData() {
 
-    var data = document.getElementById("data").value;
+    var data = document.getElementById("data").innerText;
 
     $.get('/order/add-data?data=' + data).then(res => {
         console.log('ok');
@@ -29,6 +30,7 @@ function addDate() {
 
 ```PYTHON
 def getData(request):
+    
     data = request.GET.get('data')
 
     return Response
